@@ -1,0 +1,38 @@
+
+<div class="container">
+    <div class="login-card">
+        <div class="column">
+            <h1>Login</h1>
+            <p>Please login use the wedsite</p>
+        <form class="login-form">
+            <div class="form-item">
+                <input type="text" class="form-element" placeholder="User or email">
+            </div>
+            <div class="form-item">
+                <input type="password" class="form-element" placeholder="Passwwoe">
+            </div>
+            <div class="check-box">
+                <input type="checkbox" class="rememberMe">
+                <label for="rememberMe" class="label-remember">Remember me</label> 
+            </div>
+            <button class="sign-up" type="submit">Sign In</button>
+            
+        </form>
+        <div class="sign">
+                <button class="signup-social" *ngIf="authService.currentUser==null" (click)="authService.loginInGoogle()"> 
+                    <i class="bi bi-google signup-social-icon"></i>
+                    <span class="signup-social-text">Sign up with Google</span>
+                </button>
+            </div>
+    </div>
+    <div class="column">
+        <!-- <img src="https://cdn.pixabay.com/photo/2022/12/25/04/05/living-room-7676789_640.jpg"> -->
+    </div>
+</div>
+</div>
+
+
+
+
+
+<!-- <div *ngFor></div> -->

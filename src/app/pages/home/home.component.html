@@ -1,0 +1,39 @@
+
+<p>
+    <mat-toolbar style="background-color: blue;">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button *ngIf="authService.currentUser!=null" (click)="authService.logout()" style="background-color: white;">Logout</button>
+      <img *ngIf="authService.currentUser" [src]="authService.currentUser.photoURL" style="border-radius: 30px;height: 50px;margin:5%;">
+    </mat-toolbar>
+  </p>
+
+
+  <div >
+    <div class="content" *ngFor="let item of this.news">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="item.cover_image" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{item.slug}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href="{{item.social_image}}"> button</a>
+          <button (click)="item.url" mat-button >like</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
