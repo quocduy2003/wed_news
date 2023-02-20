@@ -13,8 +13,8 @@ export class NewsService {
    }
   get(){
     let url="https://social.runwayclub.dev/api/articles/latest";
-    return this.httpClient.get(url).pipe(map ((data:any)=>{
-      return <News>data;
+    return this.httpClient.get(url).pipe(map((data:any)=>{
+      return <Array<News>>data;
     }));
   }
 }
