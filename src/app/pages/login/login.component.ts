@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit{
     onAuthStateChanged(this.auth,(user)=>{
       if(user){
         this.authService.currentUser=user;
+        console.log(user);
         this.router.navigate([`\home`]);
       }
       else{
